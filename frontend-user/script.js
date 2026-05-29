@@ -692,15 +692,6 @@ async function fetchProfiles() {
   }
 }
 
-// Hide global loader
-function hideLoader() {
-  const loader = document.getElementById('global-loader');
-  if (loader) {
-    loader.classList.add('hidden');
-    setTimeout(() => loader.remove(), 500);
-  }
-}
-
 // On Page Load
 document.addEventListener('DOMContentLoaded', () => {
   initHamburger();
@@ -711,14 +702,14 @@ document.addEventListener('DOMContentLoaded', () => {
       fetchStudentDetails(),
       fetchAcademicData(),
       fetchProfiles()
-    ]).finally(hideLoader);
+    ]);
   }
   // Load projects dynamically if on projects page
   else if (document.getElementById('projects-container')) {
-    fetchProjects().finally(hideLoader);
+    fetchProjects();
   }
   // Load achievements dynamically if on achievements page
   else if (document.getElementById('achievements-container')) {
-    fetchAchievements().finally(hideLoader);
+    fetchAchievements();
   }
 });

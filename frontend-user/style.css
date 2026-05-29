@@ -1152,37 +1152,4 @@ h1, h2, h3, .brand-name {
   width: 100%;
   height: 100%;
   background-color: #0b0f19;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.global-loader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.loader-spinner {
-  width: 50px;
-  height: 50px;
-  border: 4px solid rgba(168, 85, 247, 0.2);
-  border-top-color: #a855f7;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 1rem;
-}
-
-.loader-text {
-  color: #94a3b8;
-  font-size: 1.1rem;
-  font-family: 'Outfit', sans-serif;
-  letter-spacing: 1px;
-  animation: pulse-slow 2s infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
 }

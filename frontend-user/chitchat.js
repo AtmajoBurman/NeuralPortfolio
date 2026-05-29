@@ -167,20 +167,9 @@ function initHamburger() {
   }
 }
 
-// Hide global loader
-function hideLoader() {
-  const loader = document.getElementById('global-loader');
-  if (loader) {
-    loader.classList.add('hidden');
-    setTimeout(() => loader.remove(), 500);
-  }
-}
-
 // Main Load
 document.addEventListener('DOMContentLoaded', () => {
   initHamburger();
-  Promise.allSettled([
-    fetchChitchatFeed(),
-    fetchFooterTimestamp()
-  ]).finally(hideLoader);
+  fetchChitchatFeed();
+  fetchFooterTimestamp();
 });
