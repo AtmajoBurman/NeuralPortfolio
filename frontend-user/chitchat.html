@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Chit Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Global Loader for backend connection -->
+  <div id="global-loader" class="global-loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Connecting to Server...</div>
+  </div>
+
+  <!-- Header with Hamburger (top-left) -->
+  <header class="site-header">
+    <div class="header-container">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+      <div class="brand">
+        <span class="brand-name">सत्यमेव जयते</span>
+      </div>
+    </div>
+
+    <!-- Navigation Menu (hidden by default) -->
+    <nav class="nav-menu" id="navMenu">
+      <ul class="menu-list">
+        <li><a href="index.html" class="menu-link">About Me</a></li>
+        <li><a href="projects.html" class="menu-link">Projects</a></li>
+        <li><a href="achievements.html" class="menu-link">Certifications & Achievements</a></li>
+        <li><a href="chitchat.html" class="menu-link">Chit Chat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <h2 class="section-title">Chit Chat Board</h2>
+      <p style="color: #64748b; font-size: 1.05rem; margin-bottom: 2rem;">A temporary bulletin board for short updates,
+        thoughts, and quick links.</p>
+
+      <!-- Feed Container -->
+      <div class="projects-section" style="margin-top: 2rem;">
+        <h2 class="section-title" style="font-size: 1.6rem; margin-bottom: 1.5rem;">Recent Updates</h2>
+        <div id="chitchatFeed">
+          <!-- Dynamically populated by chitchat.js -->
+          <div style="text-align: center; color: #64748b; padding: 3rem 0;">
+            <p>Loading updates from server...</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p id="updatedAtText" class="updated-at-text"
+        style="font-size: 0.8rem; color: #475569; margin-bottom: 0.8rem; transition: opacity 0.3s ease;">Updated at: --
+      </p>
+      <p>© Professional Portfolio</p>
+    </div>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="chitchat.js"></script>
+  </footer>
+
+</body>
+
+</html>

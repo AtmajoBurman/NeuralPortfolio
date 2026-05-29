@@ -1,0 +1,26 @@
+# Smart Mode Feature Implementation Walkthrough
+
+I have fully implemented the Smart Mode toggle for the chatbot as discussed! Here's a breakdown of the changes made:
+
+## Backend Adjustments
+
+1. **Database Schema Update:**
+   Added a new `Settings` table (`app/models/settings.py`) with a `smart_mode` boolean column. This ensures the configuration persists across server restarts and new deployments.
+2. **Database Seeding:**
+   Updated `app/main.py` to seed a default setting (`id=1, smart_mode=True`) if it doesn't already exist when the app starts.
+3. **Chatbot Route Updates:**
+   - Modified the `app/routers/chatbot.py` route to read the `smart_mode` flag from the database before handing off the prompt to LangChain.
+   - If `smart_mode` is `False`, the backend immediately intercepts the request and responds with the new `GENERIC_RESPONSE` defined in `app/chatbot/generic_response.py`.
+   - Added two new authenticated routes: `GET /api/chatbot/smart-mode` and `POST /api/chatbot/smart-mode` to allow the admin portal to sync and alter the mode.
+
+## Frontend Adjustments
+
+1. **CSS Addition:**
+   Appended styles for an aesthetic slider-based toggle switch to `admin-style.css`.
+2. **Header Injection:**
+   Updated the top right `topbar` layout in all admin HTML templates (`admin.html`, `admin-projects.html`, `admin-achievements.html`, `admin-chitchat.html`) to include the "Smart Mode" label and toggle switch.
+3. **Client-side Fetching:**
+   In `admin.js`, added `initSmartModeToggle()`. Upon page load, it queries the backend for the current mode and adjusts the toggle. Any click on the toggle sends a secure POST request to modify the database. If there's an error, it visually reverses the state and throws a toast notification.
+
+> [!TIP]
+> This completes all requirements! The website will now preserve your API credits when the Chatbot is resting. Let me know if you would like me to test or refine any part of it.

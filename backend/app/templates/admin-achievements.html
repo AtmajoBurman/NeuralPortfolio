@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Admin Dashboard | Achievements</title>
+  <link rel="stylesheet" href="/static/admin-style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="sidebar-header">
+      <span class="brand-name">Admin Portal</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/admin" class="nav-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <span>About Me</span>
+      </a>
+      <a href="/admin/projects" class="nav-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>Projects</span>
+      </a>
+      <a href="/admin/achievements" class="nav-link active">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+        <span>Achievements</span>
+      </a>
+      <a href="/admin/chitchat" class="nav-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="M9 10h.01"></path><path d="M15 10h.01"></path><path d="M12 10h.01"></path></svg>
+        <span>Chit Chat</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    <header class="topbar">
+      <button class="hamburger-admin" id="adminHamburger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div style="display: flex; gap: 1rem; align-items: center;">
+        <div class="smart-mode-container" style="display: flex; align-items: center; gap: 0.5rem; border-right: 1px solid rgba(255, 255, 255, 0.1); padding-right: 1rem; margin-right: 0.5rem;">
+          <span style="font-size: 0.85rem; font-weight: 600; color: #cbd5e1;">Smart Mode</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="smartModeToggle" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <button id="updatePasswordBtn" class="btn-link">Update Password</button>
+        <a href="/" target="_blank" class="btn-link">View Site</a>
+      </div>
+    </header>
+
+    <div class="content-container">
+      <div class="section-header">
+        <h1 class="section-title">Achievements</h1>
+        <button id="addAchievementBtn" class="btn-primary">Add Achievement</button>
+      </div>
+
+      <div id="admin-achievements-container">
+        <!-- Loaded via admin.js -->
+        <div class="admin-card"><div class="skeleton skeleton-title"></div><div class="skeleton skeleton-text"></div></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/static/admin.js?v=8"></script>
+</body>
+</html>

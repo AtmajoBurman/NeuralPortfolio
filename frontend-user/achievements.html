@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Certifications & Achievements</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Global Loader for backend connection -->
+  <div id="global-loader" class="global-loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Connecting to Server...</div>
+  </div>
+
+  <!-- Header with Hamburger (top-left) -->
+  <header class="site-header">
+    <div class="header-container">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+      <div class="brand">
+        <span class="brand-name">सत्यमेव जयते</span>
+      </div>
+    </div>
+
+    <!-- Navigation Menu (hidden by default) -->
+    <nav class="nav-menu" id="navMenu">
+      <ul class="menu-list">
+        <li><a href="index.html" class="menu-link">About Me</a></li>
+        <li><a href="projects.html" class="menu-link">Projects</a></li>
+        <li><a href="achievements.html" class="menu-link">Certifications & Achievements</a></li>
+        <li><a href="chitchat.html" class="menu-link">Chit Chat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Dynamic Achievements Section -->
+      <div class="projects-section" style="margin-top: 2rem;">
+        <h2 class="section-title">Certifications & Achievements</h2>
+        <div id="achievements-container" class="projects-container">
+          <div style="text-align: center; color: #64748b; padding: 4rem 0;">
+            <p style="font-size: 1.1rem;">Loading achievements from database...</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>© Professional Portfolio</p>
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>

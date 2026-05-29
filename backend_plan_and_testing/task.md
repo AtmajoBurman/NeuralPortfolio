@@ -1,0 +1,35 @@
+# Task Checklist - Professional Portfolio Backend Implementation
+
+- [x] **Environment Setup**
+  - [x] Initialize Python virtual environment `.venv` inside `backend/`
+  - [x] Install FastAPI, Uvicorn, SQLModel, asyncpg, email-validator, and python-dotenv
+  - [x] Configure `backend/app/config.py` to read Neon PostgreSQL URL
+- [x] **Database Connection & Seeding**
+  - [x] Implement `backend/app/database.py` with async engine and DB session dependency
+  - [x] Implement lifespan setup in `backend/app/main.py` to seed static tables (`cgpa_tracker` and `student_details`)
+- [x] **Helper Utilities**
+  - [x] Implement Regex validators in `backend/app/utils/validators.py` for Google Drive, GitHub, and LinkedIn links
+  - [x] Implement global `updated_at` modification sync in `backend/app/utils/db_helpers.py`
+- [x] **SQLModel Database Models & Pydantic Schemas**
+  - [x] `sgpa.py` (Dynamic)
+  - [x] `cgpa.py` (Static)
+  - [x] `profile.py` (Dynamic)
+  - [x] `student_details.py` (Static)
+  - [x] `project.py` (Dynamic)
+  - [x] `achievement.py` (Dynamic)
+  - [x] `chitchat.py` (Dynamic)
+- [x] **FastAPI Router Endpoints**
+  - [x] SGPA routes (Create, Read, Update, Delete)
+  - [x] CGPA routes (Read, Update)
+  - [x] Profile routes (Create, Read, Update, Delete)
+  - [x] Student Details routes (Read, Update)
+  - [x] Projects routes (Create, Read, Update, Delete)
+  - [x] Achievements routes (Create, Read, Update, Delete)
+  - [x] Chit-Chat routes (Create, Read, Update, Delete)
+  - [x] Chatbot & Admin placeholders
+- [x] **Verification & Testing**
+  - [x] Write integration test script `backend/test_app.py`
+  - [x] Run the tests and fix any issues
+  - [x] Verify using FastAPI interactive docs
+- [x] **Walkthrough**
+  - [x] Write `walkthrough.md` to summarize achievements

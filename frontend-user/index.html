@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="chatbot.css">
+</head>
+
+<body>
+  <!-- Global Loader for backend connection -->
+  <div id="global-loader" class="global-loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Connecting to Server...</div>
+  </div>
+
+  <!-- Header with Hamburger (top-left) -->
+  <header class="site-header">
+    <div class="header-container">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+      <div class="brand">
+        <span class="brand-name">सत्यमेव जयते</span>
+      </div>
+    </div>
+    <!-- Navigation Menu (hidden by default) -->
+    <nav class="nav-menu" id="navMenu">
+      <ul class="menu-list">
+        <li><a href="index.html" class="menu-link">About Me</a></li>
+        <li><a href="projects.html" class="menu-link">Projects</a></li>
+        <li><a href="achievements.html" class="menu-link">Certifications & Achievements</a></li>
+        <li><a href="chitchat.html" class="menu-link">Chit Chat</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <!-- Profile Section -->
+      <div class="profile-section">
+        <div class="summary-card">
+          <div class="summary-text">
+            <h1 class="candidate-name" id="candidateName">Loading Candidate...</h1>
+            <h2 class="section-title"
+              style="font-size: 1.5rem; margin-top: 0.5rem; margin-bottom: 1rem; color: #a855f7;">Professional Summary
+            </h2>
+            <div class="dummy-summary" id="candidateBio">
+              <p>Loading professional profile from database...</p>
+            </div>
+
+            <div class="email-container" style="margin-top: 1.5rem;">
+              <a href="#" id="candidateEmail" class="email-link">
+                <svg class="email-icon"
+                  style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; fill: currentColor;"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+                <span id="candidateEmailText">Loading email...</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="profile-picture-wrapper">
+          <div class="profile-image-container">
+            <img id="profilePic" src="" alt="Candidate Profile" class="profile-img"
+              style="opacity: 0; transition: opacity 0.5s ease;">
+            <div class="glow-effect"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Academic Performance Section -->
+      <div class="summary-card academic-card" id="academicSection" style="margin-top: 2rem; margin-bottom: 2rem;">
+        <div class="project-header" style="border-bottom: none; margin-bottom: 0.5rem; padding-bottom: 0;">
+          <h2 class="section-title">Academic Performance</h2>
+          <span class="project-category"
+            style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border-color: rgba(168, 85, 247, 0.3);">
+            CGPA: <span id="cgpaVal">--</span> / 10.00
+          </span>
+        </div>
+        <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 2rem;">Semester-wise SGPA (Grade Point Average)
+          with Cumulative CGPA target line</p>
+
+        <div class="chart-container-outer">
+
+          <div class="chart-wrapper">
+            <svg id="sgpaChart" viewBox="0 0 800 350" preserveAspectRatio="xMidYMid meet">
+              <!-- Rendered dynamically by script.js -->
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Profiles Tracker Section -->
+      <div class="summary-card" id="profilesSection" style="margin-top: 2rem; margin-bottom: 2rem;">
+        <div class="project-header" style="border-bottom: none; margin-bottom: 0.5rem; padding-bottom: 0;">
+          <h2 class="section-title">Web Profiles</h2>
+        </div>
+        <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 2rem;">Professional profiles across various platforms.</p>
+        
+        <div id="profilesContainer" class="profiles-grid">
+          <div style="text-align: center; color: #64748b; padding: 2rem 0; width: 100%;">
+            <p>Loading profiles from database...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p id="updatedAtText" class="updated-at-text"
+        style="font-size: 0.8rem; color: #475569; margin-bottom: 0.8rem; transition: opacity 0.3s ease;">Updated at: --
+      </p>
+      <p>© 2026 Portfolio</p>
+    </div>
+  </footer>
+
+  <!-- floating AI Chatbot Container -->
+  <div class="ai-chatbot-container">
+    <div class="chatbot-window">
+      <div class="chatbot-header">
+        <div class="chatbot-header-info">
+          <div class="chatbot-avatar">✨</div>
+          <div>
+            <h3 class="chatbot-title">Riku</h3>
+            <span class="chatbot-status">Online</span>
+          </div>
+        </div>
+        <button class="chatbot-close" aria-label="Close Chat">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="chatbot-messages">
+        <!-- Messages will be injected here -->
+      </div>
+      <div class="chatbot-input-area">
+        <input type="text" class="chatbot-input" placeholder="Ask me anything...">
+        <button class="chatbot-send" aria-label="Send">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div class="ai-chatbot-message">Talk to AI Chatbot Riku</div>
+    <button class="ai-chatbot-fab" aria-label="AI Chatbot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        <path d="M9 10h.01"></path>
+        <path d="M15 10h.01"></path>
+        <path d="M12 10h.01"></path>
+      </svg>
+    </button>
+  </div>
+
+  <script type="module" src="script.js"></script>
+  <script type="module" src="chatbot.js"></script>
+</body>
+
+</html>
