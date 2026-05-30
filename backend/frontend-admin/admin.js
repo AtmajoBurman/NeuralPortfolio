@@ -381,7 +381,7 @@ const AdminProjects = {
       </div>
       <div class="form-row">
         <div class="form-group"><label class="form-label">Live Demo</label><input type="url" name="deployed_link" class="form-input" maxlength="200"><div class="char-counter"><span>0</span>/200</div></div>
-        <div class="form-group"><label class="form-label">LinkedIn Post</label><input type="url" name="linkedin_post" class="form-input" maxlength="200"><div class="char-counter"><span>0</span>/200</div></div>
+        <div class="form-group"><label class="form-label">LinkedIn Post</label><input type="url" name="linkedin_post" class="form-input" maxlength="500"><div class="char-counter"><span>0</span>/500</div></div>
       </div>
     `;
 
@@ -527,7 +527,7 @@ const AdminAchievements = {
       </div>
       <div class="form-row">
         <div class="form-group"><label class="form-label">Certificate Link</label><input type="url" name="view_certificate" class="form-input" maxlength="200"><div class="char-counter"><span>0</span>/200</div></div>
-        <div class="form-group"><label class="form-label">LinkedIn Post</label><input type="url" name="linkedin_post" class="form-input" maxlength="200"><div class="char-counter"><span>0</span>/200</div></div>
+        <div class="form-group"><label class="form-label">LinkedIn Post</label><input type="url" name="linkedin_post" class="form-input" maxlength="500"><div class="char-counter"><span>0</span>/500</div></div>
       </div>
     `;
 
