@@ -61,23 +61,40 @@ def get_agent_executor():
 
             memory = ConversationBufferMemory(
                 memory_key="chat_history",      # key must match agent_kwargs input_variables
-                return_messages=True
+                return_messages=False
             )
 
             SYSTEM_PREFIX = system_prefix
 
             toolkit = SQLDatabaseToolkit(db=db, llm=llm)
 
+            from langchain_core.prompts import PromptTemplate
+            from langchain_community.agent_toolkits.sql.prompt import SQL_PREFIX, SQL_SUFFIX
+            from langchain_classic.agents.mrkl.prompt import FORMAT_INSTRUCTIONS
+
+            template = "\n\n".join([
+                SYSTEM_PREFIX,
+                SQL_PREFIX,
+                "{tools}",
+                FORMAT_INSTRUCTIONS,
+                "Previous Conversation:\n{chat_history}",
+                SQL_SUFFIX
+            ])
+
+            prompt = PromptTemplate.from_template(template)
+            prompt = prompt.partial(dialect=toolkit.dialect, top_k="10")
+
             _agent_executor = create_sql_agent(
                 llm=llm,
                 toolkit=toolkit,
                 agent_type="zero-shot-react-description",
                 verbose=True,
-                prefix=SYSTEM_PREFIX,
+                prompt=prompt,
                 agent_executor_kwargs={
                     "handle_parsing_errors": True,
                     "handle_tool_error": True,
-                    "memory": memory
+                    "memory": memory,
+                    "max_iterations": 5
                 }
             )
         except Exception as e:
