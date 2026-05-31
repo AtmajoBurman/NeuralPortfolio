@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from langchain_community.agent_toolkits.sql.toolkit import SQLDatabaseToolkit
 from langchain_community.utilities import SQLDatabase
 from langchain_community.agent_toolkits import create_sql_agent
-from langchain.memory import ConversationBufferMemory
+from langchain_classic.memory import ConversationBufferMemory
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 import re
 
@@ -90,11 +90,12 @@ def get_agent_executor():
                 agent_type="zero-shot-react-description",
                 verbose=True,
                 prompt=prompt,
+                max_iterations=5,
+                early_stopping_method="generate",
                 agent_executor_kwargs={
-                    "handle_parsing_errors": True,
+                    "handle_parsing_errors": "Check your output format. If you know the answer, use 'Final Answer: '.",
                     "handle_tool_error": True,
-                    "memory": memory,
-                    "max_iterations": 5
+                    "memory": memory
                 }
             )
         except Exception as e:
