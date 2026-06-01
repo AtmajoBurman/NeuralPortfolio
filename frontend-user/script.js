@@ -252,7 +252,7 @@ async function fetchStudentDetails() {
   } catch (err) {
     console.error('Error fetching student details:', err);
     const nameEl = document.getElementById('candidateName');
-    if (nameEl) nameEl.textContent = 'Error Loading Portfolio';
+    if (nameEl) nameEl.textContent = 'Kindly refresh the page';
   }
 }
 

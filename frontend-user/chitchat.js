@@ -142,34 +142,8 @@ async function fetchFooterTimestamp() {
   }
 }
 
-// Shared Hamburger initialization
-function initHamburger() {
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const navMenu = document.getElementById('navMenu');
-
-  if (hamburgerBtn && navMenu) {
-    hamburgerBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
-      hamburgerBtn.setAttribute('aria-expanded', !isExpanded);
-      navMenu.classList.toggle('open');
-    });
-
-    document.addEventListener('click', (event) => {
-      const isClickInsideNav = navMenu.contains(event.target);
-      const isClickOnHamburger = hamburgerBtn.contains(event.target);
-      
-      if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('open')) {
-        navMenu.classList.remove('open');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-}
-
 // Main Load
 document.addEventListener('DOMContentLoaded', () => {
-  initHamburger();
   fetchChitchatFeed();
   fetchFooterTimestamp();
 });
